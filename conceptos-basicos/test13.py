@@ -8,12 +8,6 @@ except "algún error":
     print("Se ha producido algún error")
 
 
-
-
-
-
-
-
 # a) Se ha producido algún error
 
 # b) No se ha producido algún error
