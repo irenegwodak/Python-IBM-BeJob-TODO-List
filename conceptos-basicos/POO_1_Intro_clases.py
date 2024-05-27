@@ -1,6 +1,5 @@
 #  Crear e instanciar una clase
 
-# Muestra:
 # Declaración de la clase
 class Coche():
     # Declaración de atributos
@@ -10,10 +9,10 @@ class Coche():
     peso = 900
     color = "rojo"
     is_enMarcha = False
-# Declaración de métodos
 
+    # Declaración de métodos
     def arrancar(self):  # self hace referencia a la instancia de clase.
-        self.is_enMarcha = True  # Es como si pusiésemos miCoche.is_enMarcha = True
+        self.is_enMarcha = True
 
     def estado(self):
         if (self.is_enMarcha == True):
@@ -22,6 +21,7 @@ class Coche():
             return "El coche está parado"
 
 
+# Ejercicios
 # Crearemos una clase Usuario que tendrá los siguientes atributos:
 # • nombre : string
 # • edad : number
