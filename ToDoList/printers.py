@@ -1,10 +1,13 @@
 
 def print_tasks(tasks):
     print("\nTareas:")
-    for task in tasks:
-        position = tasks.index(task) + 1
-        is_completed = "Completada" if task["is_completed"] else "Pendiente"
-        print(position, task["description"], "-", is_completed)
+    if len(tasks) == 0:
+        print("No hay tareas.")
+    else:
+        for task in tasks:
+            position = tasks.index(task) + 1
+            is_completed = "Completada" if task["is_completed"] else "Pendiente"
+            print(position, task["description"], "-", is_completed)
     print("\n")
 
 

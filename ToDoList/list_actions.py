@@ -1,6 +1,5 @@
 def final_msg(var):
     print(f"Tarea {var} correctamente.")
-    input("Pulsa intro para continuar.")
 
 
 def add_task(list):
@@ -15,8 +14,11 @@ def complete_task(list):
     task_to_complete = int(
         input("¿Qué tarea quieres completar? Introduce un número: "))
     index_task_to_complete = task_to_complete - 1
-    list[index_task_to_complete]["is_completed"] = True
-    final_msg("completada")
+    if list[index_task_to_complete]["is_completed"]:
+        print("La tarea ya estaba completada.")
+    else:
+        list[index_task_to_complete]["is_completed"] = True
+        final_msg("completada")
 
 
 def delete_task(list):
