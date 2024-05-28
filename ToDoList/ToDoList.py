@@ -12,6 +12,9 @@ operaciones: """
 # • Manejo de excepciones: El programa deberá manejar excepciones en caso de que el usuario ingrese una opción no válida o una posición que no exista en la lista.
 # • Comentarios explicativos: El código deberá estar comentado para explicar su funcionamiento en cada parte relevante.
 
+user_options = ["Agregar una tarea.",
+                "Completar una tarea.", "Eliminar una tarea."]
+
 tasks = {
     "1": {"Description": "Tarea a",
           "is_completed": False},
@@ -19,9 +22,29 @@ tasks = {
           "is_completed": True},
 }
 
-while True:
+
+def print_tasks():
     print("Tareas:")
     for task in tasks:
-        print(task, tasks[task]["Description"], "-", "Completada" if tasks[task]["is_completed"] else "Pendiente")
-        
+        is_completed = "Completada" if tasks[task]["is_completed"] else "Pendiente"
+        print(task, tasks[task]["Description"], "-", is_completed)
+    print("\n")
+
+
+def print_options():
+    for option in user_options:
+        print(user_options.index(option) + 1, option)
+
+
+def select_option():
+    print("Tienes estas opciones:")
+    print_options()
+    user_selection = int(input("¿Qué te gustaría hacer? Introduce un número: "))
+    return user_selection
+
+
+while True:
+    print_tasks()
+    user_selection = select_option()
+
     break
