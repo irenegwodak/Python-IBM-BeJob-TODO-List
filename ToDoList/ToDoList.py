@@ -12,5 +12,16 @@ operaciones: """
 # • Manejo de excepciones: El programa deberá manejar excepciones en caso de que el usuario ingrese una opción no válida o una posición que no exista en la lista.
 # • Comentarios explicativos: El código deberá estar comentado para explicar su funcionamiento en cada parte relevante.
 
+tasks = {
+    "1": {"Description": "Tarea a",
+          "is_completed": False},
+    "2": {"Description": "Tarea b",
+          "is_completed": True},
+}
 
-
+while True:
+    print("Tareas:")
+    for task in tasks:
+        print(task, tasks[task]["Description"], "-", "Completada" if tasks[task]["is_completed"] else "Pendiente")
+        
+    break
