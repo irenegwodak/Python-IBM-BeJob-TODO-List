@@ -38,7 +38,7 @@ class Hijo(Padre):
         self.cara = cara  # Especificamos el nuevo atributo para Hijo
 
 
-Tomas = Hijo('Marrones', 'Negras', 'Larga')
+Tomas = Hijo('Azules', 'Blancas', 'Media')
 print(Tomas.ojos, Tomas.cejas, Tomas.cara)
 
 
