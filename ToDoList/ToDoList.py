@@ -12,14 +12,14 @@ operaciones: """
 # • Manejo de excepciones: El programa deberá manejar excepciones en caso de que el usuario ingrese una opción no válida o una posición que no exista en la lista.
 # • Comentarios explicativos: El código deberá estar comentado para explicar su funcionamiento en cada parte relevante.
 
-user_options = ["Agregar una tarea.",
-                "Completar una tarea.", "Eliminar una tarea."]
+user_options = ("Agregar una tarea.", "Completar una tarea.",
+                "Eliminar una tarea.")
 
 tasks = {
-    "1": {"Description": "Tarea a",
-          "is_completed": False},
-    "2": {"Description": "Tarea b",
-          "is_completed": True},
+    1: {"Description": "Tarea a",
+        "is_completed": False},
+    2: {"Description": "Tarea b",
+        "is_completed": True},
 }
 
 
@@ -37,14 +37,56 @@ def print_options():
 
 
 def select_option():
-    print("Tienes estas opciones:")
+    print("¿Qué te gustaría hacer?")
     print_options()
-    user_selection = int(input("¿Qué te gustaría hacer? Introduce un número: "))
+    user_selection = int(
+        input("Introduce un número: "))
+    print("\n")
     return user_selection
 
 
-while True:
-    print_tasks()
-    user_selection = select_option()
+def final_msg(var):
+    print(f"Tarea {var} correctamente.")
+    input("Pulsa intro para continuar.")
+    print("\n")
 
-    break
+
+def add_task():
+    print("Añadir una tarea")
+    new_description = input("¿Qué tarea quieres añadir?: ")
+    tasks[len(tasks)+1] = {"Description": new_description,
+                           "is_completed": False}
+    final_msg("añadida")
+
+
+def complete_task():
+    print("Completar una tarea")
+    task_to_complete = int(
+        input("¿Qué tarea quieres completar? Introduce un número: "))
+    tasks[task_to_complete]["is_completed"] = True
+    final_msg("completada")
+
+
+def delete_task():
+    print("Eliminar una tarea")
+    task_to_delete = int(
+        input("¿Qué tarea quieres eliminar? Introduce un número: "))
+    tasks.pop(task_to_delete, "no se ha encontrado")
+    final_msg("eliminada")
+
+
+while True:
+    #try:
+        print_tasks()
+        user_selection = select_option()
+        if user_selection == 1:
+            add_task()
+        elif user_selection == 2:
+            complete_task()
+        elif user_selection == 3:
+            delete_task()
+        else:
+            print("Esa tarea no existe. Por favor introduce una opción válida.")
+            break
+    # except:
+    #     print("Ha habido un error")
