@@ -41,7 +41,10 @@ while True:
             add_task(tasks)
         # Complete a task
         elif user_selection == 2:
-            complete_task(tasks)
+            if len(tasks) == 0:
+                print("No hay tareas para completar.")
+            else:
+                complete_task(tasks)
         # Delete a task
         elif user_selection == 3:
             if len(tasks) == 0:
