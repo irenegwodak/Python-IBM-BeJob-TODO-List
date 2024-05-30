@@ -1,5 +1,5 @@
 USER_MENU_OPTIONS = ("Agregar una tarea.", "Completar una tarea.",
-                "Eliminar una tarea.", "Salir.")
+                     "Eliminar una tarea.", "Salir.")
 
 CONTINUE_OPTION = {"si", "s"}
 NO_CONTINUE_OPTION = {"no", "n"}

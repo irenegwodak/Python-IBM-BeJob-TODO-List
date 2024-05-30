@@ -5,6 +5,8 @@ def printer(list):
 # task printer:
     # check if the list is empty
     # print the list with the index number + status
+
+
 def print_tasks(tasks):
     print("\nTareas:")
     if not tasks:
@@ -15,5 +17,3 @@ def print_tasks(tasks):
             is_completed = "Completada" if task["is_completed"] else "Pendiente"
             print(position, task["description"], "-", is_completed)
     print("\n")
-
-

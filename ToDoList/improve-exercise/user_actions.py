@@ -66,13 +66,12 @@ def complete_delete_task(user_selection, task_list):
     elif user_selection == 3:
         print("Eliminar una tarea.".upper())
 
-
     while True:
         index_of_task = get_task_number(task_list)
         confirmation_to_continue = get_confirmation()
 
         if confirmation_to_continue in CONTINUE_OPTION:
-            
+
             # complete: first check if was completed
             if user_selection == 2:
                 if task_list[index_of_task]["is_completed"]:
